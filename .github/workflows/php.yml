@@ -1,22 +1,13 @@
-name: Greet Everyone
+name: My Workflow
 
 on: [push]
 
 jobs:
   build:
-    name: Greeting
+    name: Process
     
     runs-on: ubuntu-latest
 
     steps:
-    # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
-    - name: Hello World
-      uses: actions/hello-world-javascript-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
-      id: hello
-      # This step prints an output (time) from the previous step's action.
-    - name: Echo the greeting's time
-      run: echo 'The time was ${{ steps.hello.outpus.time }}.'
-
-
+      - name: Setup PHP Action
+        uses: shivammathur/setup-php@1.8.2
